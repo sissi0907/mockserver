@@ -13,15 +13,7 @@
     <description>A module used for common testing code of all MockServer modules</description>
     <url>https://www.mock-server.com</url>
 
-    <repositories>
-    <repository>
-        <id>oss-sonatype-snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-    </repositories>
+   
 
 
     <dependencies>
