@@ -15,10 +15,10 @@ jobs:
           java-version: '11'
 
       - name: Compile the project
-        run: mvn test-compile -pl mockserver-core -am -Drat.skip
+        run: mvn test-compile -pl mockserver-core -am -Drat.skip -e -X
   
       - name: Run tests
-        run: mvn -pl mockserver-core test -Dtest=org.mockserver.mock.HttpStateTest#shouldHandleRetrieveLogMessagesRequest-X
+        run: mvn -pl mockserver-core test -Dtest=org.mockserver.mock.HttpStateTest#shouldHandleRetrieveLogMessagesRequest -e -X
         
       # - name: Set up JDK 8 for NonDex
       #   uses: actions/setup-java@v2
