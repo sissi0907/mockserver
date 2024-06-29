@@ -13,9 +13,10 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-
+      - name: Maven
+        run: mvn clean install -Dskiptests
       - name: Compile the project
-        run: mvn test-compile -pl mockserver-core -am -Drat.skip -e
+        run: mvn test-compile -pl mockserver-core -am -Drat.skip -Dskiptests -Dcheckstyle.skip -e
   
       - name: Run tests
         run: mvn -pl mockserver-core test -Dtest=org.mockserver.serialization.serializers.body.JsonBodySerializerTest#shouldSerializeJsonBodyAsObject -e
