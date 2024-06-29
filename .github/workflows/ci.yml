@@ -19,7 +19,7 @@ jobs:
         run: mvn test-compile -pl mockserver-core -am -Drat.skip -Dskiptests -Dcheckstyle.skip -e
   
       - name: Run tests
-        run: mvn -pl mockserver-core test -Dtest=org.mockserver.serialization.serializers.body.JsonBodySerializerTest#shouldSerializeJsonBodyAsObject -e
+        run: mvn -pl mockserver-core test -Dtest=org.mockserver.mock.HttpStateTest#shouldHandleRetrieveLogMessagesRequest -e
         
       # - name: Set up JDK 8 for NonDex
       #   uses: actions/setup-java@v2
@@ -28,4 +28,4 @@ jobs:
       #     java-version: '8'
   
       - name: Run NonDex to check for flaky tests
-        run: mvn -pl mockserver-core edu.illinois:nondex-maven-plugin:2.1.7:nondex -Dtest=org.mockserver.serialization.serializers.body.JsonBodySerializerTest#shouldSerializeJsonBodyAsObject -DnondexRuns=20
+        run: mvn -pl mockserver-core edu.illinois:nondex-maven-plugin:2.1.7:nondex -Dtest=org.mockserver.mock.HttpStateTest#shouldHandleRetrieveLogMessagesRequest -DnondexRuns=20
