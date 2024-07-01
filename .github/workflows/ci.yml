@@ -13,6 +13,8 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+      - name: Check version
+        run: git checkout 3009f363b84df6a0ba377e72f6cff6ce204af0e8
       - name: Maven
         run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
       - name: Compile the project
